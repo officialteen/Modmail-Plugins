@@ -5,6 +5,10 @@ class HelloPlugin(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, message):
+
+        if message.author.bot:
+            return
+
         if  message.content.lower() == "hello":
             await message.channel.send("Hey")
         elif message.content.lower() == "yo":
