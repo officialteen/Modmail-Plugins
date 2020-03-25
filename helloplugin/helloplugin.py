@@ -23,6 +23,8 @@ class HelloPlugin(commands.Cog):
             await message.channel.send("Good Night !")
         elif message.content.lower() == "hey":
             await message.channel.send("Hello !")
+        elif message.content.lower() == "sup":
+            await message.channel.send("Sup")
 
 def setup(bot):
     bot.add_cog(HelloPlugin(bot))
