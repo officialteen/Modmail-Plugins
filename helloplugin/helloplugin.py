@@ -9,22 +9,24 @@ class HelloPlugin(commands.Cog):
         if message.author.bot:
             return
 
-        if  message.content.lower() == "hello":
+        if "hello" in message.content:.lower():
             await message.channel.send("Hey")
-        elif message.content.lower() == "yo":
+        elif "yo" in message.content:.lower():
             await message.channel.send("yo")
-        elif message.content.lower() == "gm":
+        elif "gm" in message.content:.lower():
             await message.channel.send("Good Morning")
-        elif message.content.lower() == "gn":
+        elif "gn" in message.content:.lower():
             await message.channel.send("Good Night")
-        elif message.content.lower() == "good morning":
+        elif "good morning" in message.content:.lower():
             await message.channel.send("Good Morning !")
-        elif message.content.lower() == "good night":
+        elif "good night" in message.content:.lower(): ==
             await message.channel.send("Good Night !")
-        elif message.content.lower() == "hey":
+        elif "hey" in message.content:.lower():
             await message.channel.send("Hello !")
-        elif message.content.lower() == "sup":
+        elif "sup" in message.content:.lower():
             await message.channel.send("Sup")
+        elif "hi" in message.content:.lower():
+            await message.channel.send("Hello!")
 
 def setup(bot):
     bot.add_cog(HelloPlugin(bot))
