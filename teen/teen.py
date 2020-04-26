@@ -10,8 +10,8 @@ class TeenPlugin(commands.Cog):
         if message.author.bot:
             return
 
-        if "+teen" in message.content.lower():
-            await message.channel.send("IM HERE!")
+        if "+fleg" in message.content.lower():
+            await message.channel.send("fled = bad (jk)")
 
 def setup(bot):
     bot.add_cog(TeenPlugin(bot))
