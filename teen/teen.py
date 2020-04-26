@@ -10,13 +10,13 @@ class TeenPlugin(commands.Cog):
         if message.author.bot:
             return
 
-        if "-fled" in message.content.lower():
+        if "fled" in message.content.lower():
             await message.channel.send("isnt bad")
-        elif "-solve" in message.content.lower():
+        elif "solve" in message.content.lower():
             await message.channel.send("is cute")
-        elif "-fals" in message.content.lower():
+        elif "fals" in message.content.lower():
             await message.channel.send("is a good grinder!")
-        elif "-hecktikz" in message.content.lower():
+        elif "hecktikz" in message.content.lower():
             await message.channel.send("loves goats")    
 
 def setup(bot):
