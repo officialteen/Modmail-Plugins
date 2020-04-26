@@ -14,9 +14,9 @@ class TeenPlugin(commands.Cog):
             await message.channel.send("isnt bad")
         elif "+solve" in message.content.lower():
             await message.channel.send("is cute")
-        elif "+falls" in message.content.lower():
+        elif "+fals" in message.content.lower():
             await message.channel.send("is a good grinder!")
-        elif "+Hecktikz" in message.content.lower():
+        elif "+hecktikz" in message.content.lower():
             await message.channel.send("loves goats")    
 
 def setup(bot):
