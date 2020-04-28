@@ -4,20 +4,9 @@ class TeenPlugin(commands.Cog):
     def __init__ (self, bot):
         self.bot = bot
 
-    @commands.Cog.listener()
-    async def on_message(self, message):
-
-        if message.author.bot:
-            return
-
-        if "fled" in message.content.lower():
-            await message.channel.send("isnt bad")
-        elif "solve" in message.content.lower():
-            await message.channel.send("is cute")
-        elif "fals" in message.content.lower():
-            await message.channel.send("is a good grinder!")
-        elif "hecktikz" in message.content.lower():
-            await message.channel.send("loves goats")    
+    @commands.command()
+    async def tender(self, ctx):
+        await ctx.send("Is good")
 
 def setup(bot):
     bot.add_cog(TeenPlugin(bot))
