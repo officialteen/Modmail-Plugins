@@ -1,5 +1,15 @@
-@commands.command()
-async def say(self,ctx,* ,message):
-    """Make the bot say something"""
-    msg = escape(message,mass_mentions=True)
-    await ctx.send(msg)
+import discord
+from discord.ext import commands
+
+class Say(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
+        
+    @commands.command()
+    async def say(self, ctx, *, message):
+        """Make the bot say something"""
+        await ctx.send(message.replace("@everyone", "@\u200beveryone").replace("@here", "@\u200bhere"))
+        await ctx.message.delete()
+
+def setup(bot):
+    bot.add_cog(Say(bot))
