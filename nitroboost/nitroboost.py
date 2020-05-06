@@ -6,9 +6,6 @@ class BoostPlugin(commands.Cog):
     @commands.Cog.listener()
     async def on_message(self, message):
 
-        if message.author.bot:
-            return
-
         if message.type == discord.MessageType.new_member:
             await message.channel.send("TEST")
             
