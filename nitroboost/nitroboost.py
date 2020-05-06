@@ -9,7 +9,7 @@ class BoostPlugin(commands.Cog):
         if message.author.bot:
             return
 
-        if message.type == discord.MessageType.premium_guild_subscription:
+        if message.type == discord.MessageType.new_member:
             await message.channel.send("TEST")
             
 def setup(bot):
