@@ -9,7 +9,7 @@ class BoostPlugin(commands.Cog):
         if message.author.bot:
             return
 
-        if "Glad" in message.content.lower():
+        if "glad" in message.content.lower():
             print(message.channel.id)
             if message.channel.id == 707283578655866910:
                 await message.channel.send("TEST")
