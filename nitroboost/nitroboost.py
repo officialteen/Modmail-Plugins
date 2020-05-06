@@ -13,7 +13,7 @@ class BoostPlugin(commands.Cog):
             if message.channel.id == 586645529778454530:
                 await ctx.send("TEST")
             else:
-        else:
+                else:
  
 
 def setup(bot):
