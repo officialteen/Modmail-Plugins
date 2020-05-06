@@ -1,3 +1,4 @@
+import discord
 from discord.ext import commands
 class BoostPlugin(commands.Cog):
     def __init__ (self, bot):
