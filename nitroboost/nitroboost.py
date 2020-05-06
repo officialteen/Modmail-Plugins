@@ -10,7 +10,8 @@ class BoostPlugin(commands.Cog):
             return
 
         if "test" in message.content.lower():
-            if message.channel.id == 586645529778454530:
+            print(message.channel.id)
+            if message.channel.id == 707283578655866910:
                 await message.channel.send("TEST")
  
 
