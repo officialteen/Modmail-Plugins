@@ -4,14 +4,14 @@ class BoostPlugin(commands.Cog):
         self.bot = bot
 
     @commands.Cog.listener()
-    async def on_message(self, ctx, message):
+    async def on_message(self, message):
 
         if message.author.bot:
             return
 
         if "test" in message.content.lower():
             if message.channel.id == 586645529778454530:
-                await ctx.send("TEST")
+                await channel.send("TEST")
  
 
 def setup(bot):
