@@ -4,7 +4,7 @@ class BoostPlugin(commands.Cog):
         self.bot = bot
 
     @commands.Cog.listener()
-    async def on_message(self, message, ctx):
+    async def on_message(self, ctx, message):
 
         if message.author.bot:
             return
