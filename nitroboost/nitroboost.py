@@ -9,11 +9,8 @@ class BoostPlugin(commands.Cog):
         if message.author.bot:
             return
 
-        if "glad" in message.content.lower():
-            print(message.channel.id)
-            if message.channel.id == 707283578655866910:
-                await message.channel.send("TEST")
- 
-
+        if message.type == discord.MessageType.premium_guild_subscription:
+            await message.channel.send("TEST")
+            
 def setup(bot):
     bot.add_cog(BoostPlugin(bot))
