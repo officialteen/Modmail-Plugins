@@ -10,8 +10,8 @@ class BoostPlugin(commands.Cog):
             return
 
         if "test" in message.content.lower():
-        if message.channel.id == 586645529778454530:
-          await ctx.send("TEST")
+            if message.channel.id == 586645529778454530:
+                await ctx.send("TEST")
 
 def setup(bot):
     bot.add_cog(BoostPlugin(bot))
