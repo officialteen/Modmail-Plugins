@@ -9,8 +9,8 @@ class BoostPlugin(commands.Cog):
 
         print(message.type)
         if message.type == discord.MessageType.new_member:
-            booster = message.mentions[0]
-            embed = discord.Embed(title="Nitro Boost", description=f"{booster.mention}, thank you so much for boosting!", color=0xff0000)
+            a = message.content.replace(" just boosted the server", "")
+            embed = discord.Embed(title=f"**Nitro Boost**", description=f"{a} thank you so much for boosting <a:BoostingAnimated:707512475246919712> !", color=0xff0000)
             await message.channel.send(embed=embed)
             
 def setup(bot):
