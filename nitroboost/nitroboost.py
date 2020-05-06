@@ -8,7 +8,7 @@ class BoostPlugin(commands.Cog):
     async def on_message(self, message):
 
         print(message.type)
-        if message.type == discord.MessageType.premium_guild_subscription:
+        if message.type == discord.MessageType.new_member:
             booster = message.mentions[0]
             embed = discord.Embed(title="Nitro Boost", description=f"{booster.mention}, thank you so much for boosting!", color=0xff0000)
             await message.channel.send(embed=embed)
