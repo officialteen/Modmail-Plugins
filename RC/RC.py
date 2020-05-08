@@ -11,7 +11,7 @@ class RC(commands.Cog):
 
     @commands.command()
     @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
-    async def rc_f(self, ctx, member: discord.Member):
+    async def rcf(self, ctx, member: discord.Member):
         fn_role = ctx.guild.get_role(641310880302104576)
         hope_role = ctx.guild.get_role(614093090344402955)
         updates = self.bot.get_channel(662802293674082334)
@@ -40,8 +40,8 @@ class RC(commands.Cog):
         )
         await ctx.send(embed=embed)
         
-    @rc_f.error
-    async def rc_f_error(self, ctx, error):
+    @rcf.error
+    async def rcf_error(self, ctx, error):
         if isinstance(error, commands.MissingPermissions):
             embed = discord.Embed(
                     title = "Fail",
