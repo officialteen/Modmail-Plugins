@@ -14,7 +14,7 @@ class RC(commands.Cog):
     async def rc_f(self, ctx, member: discord.Member):
         fn_role = ctx.guild.get_role(641310880302104576)
         hope_role = ctx.guild.get_role(614093090344402955)
-        updates = client.get_channel(662802293674082334)
+        updates = self.bot.get_channel(662802293674082334)
         await member.add_role(fn_role)
         await member.add_role(hope_role)
         embed = discord.Embed(description=f"Welcome {member.mention} as our newest Fortnite recruit!",color = 0x06c9ff)
