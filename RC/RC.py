@@ -35,4 +35,4 @@ async def rc_f(self, ctx, member: discord.Member):
     await member.send(embed=embed)
 
 def setup(bot):
-    bot.add_cog(RCPlugin(bot))
+    bot.add_cog(RC(bot))
