@@ -48,7 +48,7 @@ async def rc_f_error(self, ctx, error):
                 description = "You do not have permissions to recruit players",
                 color=0xff0000
             )
-            await ctx.send(embed=embed)
+        await ctx.send(embed=embed)
 
 def setup(bot):
     bot.add_cog(RC(bot))
