@@ -123,7 +123,7 @@ class RC(commands.Cog):
         await u.add_reaction("🤩")
         embed = discord.Embed(
             title="Welcome to Team Hope",
-            description=f"Welcome to Team Hope Studios Team, congratulations on getting recruited! Make sure to check out <#681985501737123997> to prevent being kicked from the team, this includes being professional and leaking things and much more, please check out the channel! Once you have been in Hope for a month, you may request free GFX from our GFX!",
+            description=f"Welcome to Team Hope Studios Team, congratulations on getting recruited! Make sure to check out <#681985501737123997> to prevent being kicked from the team, this includes being professional and leaking things and much more, please check out <#617115135340707879> if you are a GFX, this is where people can ask for GFX! Don't worry, after 1 month we pay you, so please do not ask them for money.",
             color=0x06c9ff,
         )
         embed.set_footer(
