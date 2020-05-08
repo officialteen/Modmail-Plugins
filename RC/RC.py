@@ -33,6 +33,22 @@ class RC(commands.Cog):
         text = "Enjoy your stay with Team Hope. we hope you enjoy!"
     )
         await member.send(embed=embed)
+        embed = discord.Embed(
+            title="Success",
+            description=f"Successfully Recruited {member.mention}",
+            color=0x06c9ff,
+        )
+        await ctx.send(embed=embed)
+        
+    @rc_f.error
+    async def rc_f_error(self, ctx, error):
+        if isinstance(error, commands.MissingPermissions):
+            embed = discord.Embed(
+                title = "Failed",
+                description = f"{ctx.author.mention} You do not have permissions to recruit players",
+                color=0xff0000
+            )
+            await ctx.send(embed = embed)   
 
 def setup(bot):
     bot.add_cog(RC(bot))
