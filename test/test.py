@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-class testPlugin(commands.Cog):
+class TestPlugin(commands.Cog):
     def __init__ (self, bot):
         self.bot = bot
 
@@ -16,4 +16,4 @@ class testPlugin(commands.Cog):
             await ctx.send(f"{ctx.author.mention} you do not have permissions to run this command, Only co owner can")
         
 def setup(bot):
-    bot.add_cog(testPlugin(bot))        
+    bot.add_cog(TestPlugin(bot))        
