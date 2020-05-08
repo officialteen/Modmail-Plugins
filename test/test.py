@@ -6,12 +6,11 @@ class TestPlugin(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    @commands.has_role("❰ CO OWNER ❱")
-    async def whoisAcer(self, ctx):
+    async def whoisacer(self, ctx):
         await ctx.send("Some gay person")
 
     @whoisAcer.error
-    async def whoisAcer(self, ctx, error):
+    async def whoisacer(self, ctx, error):
         if isinstance(error, commands.MissingRole):
             await ctx.send(f"{ctx.author.mention} you do not have permissions to run this command, Only co owner can")
         
