@@ -36,17 +36,17 @@ class RC(commands.Cog):
         embed = discord.Embed(
             title="Success",
             description=f"Successfully Recruited {member.mention}",
-            color=0x06c9ff,
+            color=0x06c9ff
         )
         await ctx.send(embed=embed)
         
-    else:
-        embed = discord.Embed(
-            title = "Failed",
-            description = f"{ctx.author.mention} You do not have permissions to recruit players",
-            color=0xff0000
-        )
-        await ctx.send(embed = embed)   
+        else:
+            embed = discord.Embed(
+                title = "Failed",
+                description = f"{ctx.author.mention} You do not have permissions to recruit players",
+                color=0xff0000
+            )
+            await ctx.send(embed = embed)   
 
 def setup(bot):
     bot.add_cog(RC(bot))
