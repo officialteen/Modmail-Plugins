@@ -15,11 +15,11 @@ class NsfwPlugin(commands.Cog):
         """Sends a random porn gif"""
         g = requests.get("https://nekobot.xyz/api/image?type=pgif")
         g = r.json()
-        url = r["message"]
+        url = g["message"]
         embed = discord.Embed()
         embed = discord.Embed(color=0x59E9FF())
         embed.set_image(url=url)
-        embed.title = "Here goes :eggplant:"
+        embed.title = "Here it goes"
         await ctx.send(embed=embed)
 
 def setup(bot):
