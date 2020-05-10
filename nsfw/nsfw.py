@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+import requests
 
 from core import checks
 from core.models import PermissionLevel
