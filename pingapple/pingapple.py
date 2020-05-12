@@ -17,8 +17,8 @@ class PingApplePlugin(commands.Cog):
     async def pingapple_error(ctx, error):
         if isinstance(error, commands.MissingPermissions):
             embed=discord.Embed(
-                title = "Error"
-                description = f"This command can only be used in <#679741078630563842>"
+                title = "Error",
+                description = f"This command can only be used in <#679741078630563842>",
                 color = self.blurple
             )
             await ctx.send(embed=embed)
