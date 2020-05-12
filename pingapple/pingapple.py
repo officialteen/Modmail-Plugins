@@ -8,10 +8,10 @@ class PingApplePlugin(commands.Cog):
 
     @commands.command()
     async def pingapple():
-        if ctx.channel.id == 679741078630563842
-        await ctx.send(f"<@239357569125187588>")
-        await ctx.send(f"<@239357569125187588>")
-        await ctx.send(f"<@239357569125187588>")
+        if ctx.channel.id == 679741078630563842:
+            await ctx.send(f"<@239357569125187588>")
+            await ctx.send(f"<@239357569125187588>")
+            await ctx.send(f"<@239357569125187588>")
 
     @pingapple.error
     async def pingapple_error(ctx, error):
