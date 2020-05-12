@@ -13,10 +13,7 @@ class PingApplePlugin(commands.Cog):
             await ctx.send(f"<@239357569125187588>")
             await ctx.send(f"<@239357569125187588>")
             await ctx.message.delete()
-
-    @pingapple.error
-    async def pingapple_error(self, ctx, error):
-        if isinstance(error, commands.MissingPermissions):
+        else:
             embed=discord.Embed(
                 title = "Error",
                 description = f"This command can only be used in <#679741078630563842>",
@@ -24,8 +21,6 @@ class PingApplePlugin(commands.Cog):
             )
             await ctx.send(embed=embed)
             await ctx.message.delete()
-        else:
-            raise Exception
-
+                
 def setup(bot):
     bot.add_cog(PingApplePlugin(bot))
