@@ -24,6 +24,8 @@ class PingApplePlugin(commands.Cog):
             )
             await ctx.send(embed=embed)
             await ctx.message.delete()
+        else:
+            raise Exception
 
 def setup(bot):
     bot.add_cog(PingApplePlugin(bot))
