@@ -22,7 +22,7 @@ class PingApplePlugin(commands.Cog):
                 color = self.blurple
             )
             await ctx.send(embed=embed)
-            await ctxmessage.delete()
+            await ctx.message.delete()
 
 def setup(bot):
     bot.add_cog(PingApplePlugin(bot))
