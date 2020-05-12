@@ -1,5 +1,7 @@
 import discord
 from discord.ext import commands
+from core import checks
+from core.models import PermissionLevel
 
 class PingApplePlugin(commands.Cog):
     def __init__ (self, bot):
@@ -7,6 +9,7 @@ class PingApplePlugin(commands.Cog):
         self.blurple = 0xFF2B2B
 
     @commands.command()
+    @checks.has_permissions(PermissionLevel.ADMINISTRATOR)
     async def pingapple(self, ctx):
         if ctx.channel.id == 679741078630563842:
             await ctx.send(f"<@239357569125187588>")
@@ -14,12 +17,6 @@ class PingApplePlugin(commands.Cog):
             await ctx.send(f"<@239357569125187588>")
             await ctx.message.delete()
         else:
-            embed=discord.Embed(
-                title = "Error",
-                description = f"This command can only be used in <#679741078630563842>",
-                color = self.blurple
-            )
-            await ctx.send(embed=embed)
             await ctx.message.delete()
                 
 def setup(bot):
