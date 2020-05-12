@@ -7,7 +7,7 @@ class PingApplePlugin(commands.Cog):
         self.blurple = 0xFF2B2B
 
     @commands.command()
-    async def pingapple():
+    async def pingapple(self, ctx):
         if ctx.channel.id == 679741078630563842:
             await ctx.send(f"<@239357569125187588>")
             await ctx.send(f"<@239357569125187588>")
