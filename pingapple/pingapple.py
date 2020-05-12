@@ -12,9 +12,10 @@ class PingApplePlugin(commands.Cog):
             await ctx.send(f"<@239357569125187588>")
             await ctx.send(f"<@239357569125187588>")
             await ctx.send(f"<@239357569125187588>")
+            await ctx.message.delete()
 
     @pingapple.error
-    async def pingapple_error(ctx, error):
+    async def pingapple_error(self, ctx, error):
         if isinstance(error, commands.MissingPermissions):
             embed=discord.Embed(
                 title = "Error",
