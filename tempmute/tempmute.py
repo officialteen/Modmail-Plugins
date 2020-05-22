@@ -20,27 +20,50 @@ class TimeConverter(commands.Converter):
         time = 0
         for v, k in matches:
             try:
-                time += time_dict[k]*float(v)
+                time += time_dict[k] * float(v)
             except KeyError:
                 raise commands.BadArgument("{} is an invalid time-key! h/m/s/d are valid!".format(k))
             except ValueError:
                 raise commands.BadArgument("{} is not a number!".format(v))
         return time
 
-class MuteCog(commands.Cog):
-    def __init__(self, bot):
-        self.bot = bot
-        
     @commands.command()
+    @checks.has_permissions(PermissionLevel.MODERATOR)
     async def tempmute(self, ctx, member:discord.Member, *, time:TimeConverter = None):
         """Mutes a member for the specified time- time in 2d 10h 3m 2s format ex:
         &mute @Someone 1d"""
         role = discord.utils.get(ctx.guild.roles, name="Muted")
+        if role == None:
+            role = await ctx.guild.create_role(name="Muted")
+            for channel in ctx.guild.text_channels:
+                await channel.set_permissions(role, send_messages=False)
         await member.add_roles(role)
-        await ctx.send(f"{member.mention} has been muted by {ctx.message.author.mention} for {time}s" if time else f"Muted {member.mention}")
+        embed = discord.Embed(
+            title= "Mute",
+            description= f"{member.mention} has been muted by {ctx.message.author.mention} for {time}s" if time else f"Muted {member.mention}",
+            color=0x00FF00
+        )
+        await ctx.send(embed=embed)
+        embed = discord.Embed(
+            title= "Muted",
+            description= f"You have been muted in {ctx.guiild.name} by {ctx.author.mention} for {time}",
+            color=0x06c9ff
+        )
+        await member.send(embed=embed)
         if time:
             await asyncio.sleep(time)
             await member.remove_roles(role)
+
+    @tempmute.error
+    async def tempmute_error(self, ctx, error):
+        if isinstance(error, commands.MissingPermissions):
+            embed = discord.Embed(
+                title="Error",
+                description="You do not have permissions to tempmute members!",
+                color=0xFF0000
+            )
+            await ctx.send(embed=embed)
+            await ctx.message.delete()
             
 def setup(bot):
-    bot.add_cog(MuteCog(bot))            
+    bot.add_cog(MuteCog(bot))
