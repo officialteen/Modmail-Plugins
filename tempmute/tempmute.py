@@ -27,7 +27,6 @@ class TimeConverter(commands.Converter):
 class MuteCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-
     @commands.command()
     async def tempmute(self, ctx, member:discord.Member, *, time:TimeConverter = None):
         """Mutes a member for the specified time- time in 2d 10h 3m 2s format ex:
