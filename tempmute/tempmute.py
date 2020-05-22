@@ -49,22 +49,22 @@ class TimeConverter(commands.Converter):
         else:
             role = discord.utils.get(ctx.guild.roles, name="Muted")
             if role == None:
-            role = await ctx.guild.create_role(name="Muted")
-            for channel in ctx.guild.text_channels:
-            await channel.set_permissions(role, send_messages=False)
-            await member.add_roles(role)
-            embed = discord.Embed(
-                title= "Mute",
-                description= f"{member.mention} has been muted by {ctx.message.author.mention} for {time}s",
-                color=0x00FF00
-            )
-            await ctx.send(embed=embed)
-            embed = discord.Embed(
-                title= "Muted",
-                description= f"You have been muted in {ctx.guiild.name} by {ctx.author.mention} for {time}",
-                color=0x06c9ff
-            )
-            await member.send(embed=embed)
+                role = await ctx.guild.create_role(name="Muted")
+                for channel in ctx.guild.text_channels:
+                await channel.set_permissions(role, send_messages=False)
+                await member.add_roles(role)
+                embed = discord.Embed(
+                    title= "Mute",
+                    description= f"{member.mention} has been muted by {ctx.message.author.mention} for {time}s",
+                    color=0x00FF00
+                )
+                await ctx.send(embed=embed)
+                embed = discord.Embed(
+                    title= "Muted",
+                    description= f"You have been muted in {ctx.guiild.name} by {ctx.author.mention} for {time}",
+                    color=0x06c9ff
+                )
+                await member.send(embed=embed)
             if time:
                 await asyncio.sleep(time)
                 await member.remove_roles(role)
