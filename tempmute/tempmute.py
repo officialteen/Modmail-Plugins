@@ -1,11 +1,14 @@
-import discord
-import asyncio
-import re
+#Discord Imports
+import discord 
 from discord.ext import commands
-import sys
-import traceback
+#Modmail Imports
 from core import checks
 from core.models import PermissionLevel
+#Other Imports
+import re
+import asyncio
+import sys
+import traceback
 
 time_regex = re.compile("(?:(\d{1,5})(h|s|m|d))+?")
 time_dict = {"h":3600, "s":1, "m":60, "d":86400}
@@ -34,7 +37,7 @@ class MuteCog(commands.Cog):
         &mute @Someone 1d"""
         role = discord.utils.get(ctx.guild.roles, name="Muted")
         await member.add_roles(role)
-        await ctx.send(("Muted {} for {}s" if time else "Muted {}").format(member, time))
+        await ctx.send((f"{member.mention} has been muted by {ctx.message.author.mention} for {}s" if time else "Muted {}").format(member, time))
         if time:
             await asyncio.sleep(time)
             await member.remove_roles(role)
