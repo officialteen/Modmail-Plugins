@@ -37,7 +37,7 @@ class MuteCog(commands.Cog):
         &mute @Someone 1d"""
         role = discord.utils.get(ctx.guild.roles, name="Muted")
         await member.add_roles(role)
-        await ctx.send(f"{member.mention} has been muted by {ctx.message.author.mention} for {time}s" if time else f"Muted {member.mention}")(member, time)
+        await ctx.send(f"{member.mention} has been muted by {ctx.message.author.mention} for {time}s" if time else f"Muted {member.mention}")
         if time:
             await asyncio.sleep(time)
             await member.remove_roles(role)
