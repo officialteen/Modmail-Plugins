@@ -32,28 +32,43 @@ class TimeConverter(commands.Converter):
     async def tempmute(self, ctx, member:discord.Member, *, time:TimeConverter = None):
         """Mutes a member for the specified time- time in 2d 10h 3m 2s format ex:
         &mute @Someone 1d"""
-        role = discord.utils.get(ctx.guild.roles, name="Muted")
-        if role == None:
-            role = await ctx.guild.create_role(name="Muted")
-            for channel in ctx.guild.text_channels:
-                await channel.set_permissions(role, send_messages=False)
-        await member.add_roles(role)
-        embed = discord.Embed(
-            title= "Mute",
-            description= f"{member.mention} has been muted by {ctx.message.author.mention} for {time}s" if time else f"Muted {member.mention}",
-            color=0x00FF00
-        )
-        await ctx.send(embed=embed)
-        embed = discord.Embed(
-            title= "Muted",
-            description= f"You have been muted in {ctx.guiild.name} by {ctx.author.mention} for {time}",
-            color=0x06c9ff
-        )
-        await member.send(embed=embed)
-        if time:
-            await asyncio.sleep(time)
-            await member.remove_roles(role)
-
+        if time == None:
+            embed = discord.Embed(
+                title= "Error",
+                description= "Please specify a time",
+                color= 0xFF0000
+            )
+            await ctx.send(embed=embed)
+            if member == None:
+                embed = discord.Embed(
+                    title= "Error",
+                    description= "Please specify a member to mute",
+                    color= 0xFF0000
+                )
+                await ctx.send(embed=embed)
+                else:
+                    role = discord.utils.get(ctx.guild.roles, name="Muted")
+                    if role == None:
+                        role = await ctx.guild.create_role(name="Muted")
+                        for channel in ctx.guild.text_channels:
+                        await channel.set_permissions(role, send_messages=False)
+                        await member.add_roles(role)
+                        embed = discord.Embed(
+                            title= "Mute",
+                            description= f"{member.mention} has been muted by {ctx.message.author.mention} for {time}s",
+                            color=0x00FF00
+                        )
+                        await ctx.send(embed=embed)
+                        embed = discord.Embed(
+                            title= "Muted",
+                            description= f"You have been muted in {ctx.guiild.name} by {ctx.author.mention} for {time}",
+                            color=0x06c9ff
+                        )
+                        await member.send(embed=embed)
+                        if time:
+                            await asyncio.sleep(time)
+                            await member.remove_roles(role)
+             
     @tempmute.error
     async def tempmute_error(self, ctx, error):
         if isinstance(error, commands.MissingPermissions):
@@ -63,7 +78,6 @@ class TimeConverter(commands.Converter):
                 color=0xFF0000
             )
             await ctx.send(embed=embed)
-            await ctx.message.delete()
             
 def setup(bot):
     bot.add_cog(MuteCog(bot))
