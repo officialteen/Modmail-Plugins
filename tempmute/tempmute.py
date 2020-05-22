@@ -1,10 +1,7 @@
-#Discord Imports
 import discord 
 from discord.ext import commands
-#Modmail Imports
 from core import checks
 from core.models import PermissionLevel
-#Other Imports
 import re
 import asyncio
 import sys
