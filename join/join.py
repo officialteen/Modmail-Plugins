@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-class JoinHope(commands.Bot):
+class JoinHope(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
