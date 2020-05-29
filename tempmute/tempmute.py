@@ -33,6 +33,7 @@ class MuteCog(commands.Cog):
     async def tempmute(self, ctx, member:discord.Member, *, time:TimeConverter = None):
         """Mutes a member for the specified time- time in 2d 10h 3m 2s format ex:
         &mute @Someone 1d"""
+        print(1)
         if time == None:
             embed = discord.Embed(
                 title= "Error",
@@ -40,6 +41,7 @@ class MuteCog(commands.Cog):
                 color= 0xFF0000
             )
             await ctx.send(embed=embed)
+            print(2)
         if member == None:
             embed = discord.Embed(
                 title= "Error",
@@ -47,6 +49,7 @@ class MuteCog(commands.Cog):
                 color= 0xFF0000
             )
             await ctx.send(embed=embed)
+            print(3)
         else:
             role = discord.utils.get(ctx.guild.roles, name="Muted")
             if role == None:
@@ -60,15 +63,18 @@ class MuteCog(commands.Cog):
                         color=0x00FF00
                     )
                     await ctx.send(embed=embed)
+                    print(4)
                     embed = discord.Embed(
                         title= "Muted",
                         description= f"You have been muted in {ctx.guiild.name} by {ctx.author.mention} for {time}",
                         color=0x06c9ff
                     )
                     await member.send(embed=embed)
+                    print(5)
             if time:
                 await asyncio.sleep(time)
                 await member.remove_roles(role)
+                print(6)
              
     @tempmute.error
     async def tempmute_error(self, ctx, error):
