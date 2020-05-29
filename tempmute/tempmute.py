@@ -24,6 +24,10 @@ class TimeConverter(commands.Converter):
                 raise commands.BadArgument("{} is not a number!".format(v))
         return time
 
+class MuteCog(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot    
+    
     @commands.command()
     @checks.has_permissions(PermissionLevel.MODERATOR)
     async def tempmute(self, ctx, member:discord.Member, *, time:TimeConverter = None):
