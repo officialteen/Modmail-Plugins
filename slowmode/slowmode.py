@@ -1,12 +1,15 @@
 import discord
 from discord.ext import commands
 import re
+from core import checks
+from core.models import PermissionLevel
 
 class SlowMode(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
     @commands.command()
+    @checks.has_permissions(PermissionLevel.MODERATOR)
     async def slowmode(self, ctx, time, channel: discord.TextChannel = None):
         """Set a slowmode to a channel
         It is not possible to set a slowmode longer than 6 hours
@@ -36,9 +39,18 @@ class SlowMode(commands.Cog):
             embed = discord.Embed(description="⚠ I don't have permission to do this!", color=0xff0000)
             return await ctx.send(embed=embed)
         embed=discord.Embed(description=f"{ctx.author.mention} set a slowmode delay of `{time}` in {ctx.channel.mention}", color=0x06c9ff)
-        embed.set_author(name="Slow Mode - Team Hope", icon_url="https://cdn.discordapp.com/attachments/639774534639288330/710608697906167908/Hope_new_bot_logo_blue.jpg")
-        embed.set_footer(text=" | Made By xTeen#3011")
+        embed.set_author(name="Slow Mode")
         await ctx.send(embed=embed)
+
+    @commands.command()
+    @checks.has_permissions(PermissionLevel.MODERATOR)
+    async def slowmode_off(self, ctx, time, channel: discord.TextChannel = None):
+        """Turn off the slowmode in a channel"""
+        if not channel:
+            channel = ctx.channel
+        seconds_off = 0
+        await channel.edit(slowmode_delay=seconds_off)
+        await ctx.send("kk, done")
 
 def setup(bot):
     bot.add_cog(SlowMode(bot))
