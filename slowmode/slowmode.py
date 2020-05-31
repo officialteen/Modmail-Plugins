@@ -35,7 +35,7 @@ class SlowMode(commands.Cog):
         except discord.errors.Forbidden:
             embed = discord.Embed(description="⚠ I don't have permission to do this!", color=0xff0000)
             return await ctx.send(embed=embed)
-        embed=discord.Embed(description=f"{ctx.author.mention} set a slowmode delay of {time} in {ctx.channel.mention}", color=0x06c9ff)
+        embed=discord.Embed(description=f"{ctx.author.mention} set a slowmode delay of `{time}` in {ctx.channel.mention}", color=0x06c9ff)
         embed.set_author(name="Slow Mode - Team Hope", icon_url="https://cdn.discordapp.com/attachments/639774534639288330/710608697906167908/Hope_new_bot_logo_blue.jpg")
         embed.set_footer(text=" | Made By xTeen#3011")
         await ctx.send(embed=embed)
