@@ -44,7 +44,7 @@ class SlowMode(commands.Cog):
 
     @commands.command()
     @checks.has_permissions(PermissionLevel.MODERATOR)
-    async def slowmode_off(self, ctx, time, channel: discord.TextChannel = None):
+    async def slowmode_off(self, ctx, channel: discord.TextChannel = None):
         """Turn off the slowmode in a channel"""
         if not channel:
             channel = ctx.channel
