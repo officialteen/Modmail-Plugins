@@ -15,7 +15,7 @@ class SlowMode(commands.Cog):
         It is not possible to set a slowmode longer than 6 hours
         """
         if not channel:
-            channel = discord.TextChannel
+            channel = discord.TextChannel = None
 
         units = {
             "d": 86400,
