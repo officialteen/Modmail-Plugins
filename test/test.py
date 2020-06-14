@@ -6,7 +6,7 @@ from core.models import PermissionLevel
 
 import asyncio
 
-class NoRcSub(commands.Cog)
+class NoRcSub(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
