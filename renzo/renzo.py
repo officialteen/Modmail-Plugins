@@ -9,6 +9,7 @@ class RenzoBanAppeal(commands.Cog):
     @commands.Cog.listener()
     async def on_thread_ready(self, thread):
         msg = thread.genesis_message
+        recipient = thread.recipient
 
         def check(payload):
             return payload.emoji.name in "✅" and payload.message_id == msg.id and not payload.member.bot
