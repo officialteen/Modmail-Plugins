@@ -30,7 +30,7 @@ class RenzoBanAppeal(commands.Cog):
                         description=f"{payload.member.mention} declined {thread.recipient.mention}'s appeal.\n\n{thread.recipient.mention} has been banned.",
                         color=0x0000FF
                     )
-                    await msg.channel.send(embed=embed)
+                    await thread.channel.send(embed=embed)
                     await thread.close(closer=payload.member)
                 except:
                     return await msg.channel.send(f"Couldn't Ban {thread.recipient}! :(")
