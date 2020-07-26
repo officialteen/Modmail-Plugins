@@ -25,7 +25,6 @@ class RenzoBanAppeal(commands.Cog):
             if payload.emoji.name == "✅":
                 try:
                     user = msg.guild.get_member(thread.recipient.id)
-                    await user.ban()
                     embed = discord.Embed(
                         title="Declined and Banned",
                         description=f"{payload.member.mention} declined {thread.recipient.mention}'s appeal.\n\n{thread.recipient.mention} has been banned.",
@@ -34,6 +33,7 @@ class RenzoBanAppeal(commands.Cog):
                     await msg.channel.send(embed=embed)
                     await asyncio.sleep(2)
                     await thread.close(closer=payload.member)
+                    await user.ban()
                 except:
                     return await msg.channel.send(f"Couldn't Ban {thread.recipient}! :(")
 
