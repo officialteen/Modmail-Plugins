@@ -45,7 +45,6 @@ class Verify(commands.Cog):
                 else:
                     await message.delete()
                     return
-        await self.bot.process_commands(message)
 
 def setup(bot):
     bot.add_cog(Verify(bot))
