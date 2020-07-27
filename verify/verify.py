@@ -39,7 +39,7 @@ class Verify(commands.Cog):
                         description=f"{message.author.mention} just verified!\n\nHis ID is {message.author.id}\n\nThe message ID is {message.id}\nThe channel ID is {message.channel.id}\nThe message was sent at {message.created_at}",
                         color=self.maincolor
                     )
-                    log_channel.send(embed=embed)
+                    await log_channel.send(embed=embed)
                     await asyncio.sleep(2)
                     await message.delete()
                 else:
