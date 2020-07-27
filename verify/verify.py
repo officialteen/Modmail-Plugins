@@ -28,9 +28,10 @@ class Verify(commands.Cog):
 
         else:
             if message.content.lower() == "verify":
-                role = self.bot.get_role(self.defaultRole)
+                guild = message.guild
+                role = guild.get_role(self.defaultRole)
                 await message.author.add_roles(role)
-                log_channel = self.bot.get_channel(self.log_channel)
+                log_channel = guild.get_channel(self.log_channel)
                 await message.add_reactions(":white_check_mark:")
                 embed = discord.Embed(
                     title="Someone just verified!",
