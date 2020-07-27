@@ -16,7 +16,7 @@ class Verify(commands.Cog):
     async def sendverifymsg(self, ctx):
         embed = discord.Embed(
             title="**Verification**",
-            description="To gain access to the Team Hope Discord Server, you will have to verify.\n\nVerifying means that you have agreed to our Rules and Guidelines\n\nTo verify, please type `verify` in this channel!",
+            description="To gain access to the Team Hope Discord Server, you will have to verify.\n\nVerifying means that you have agreed to our Rules and Guidelines\n\nOur Rules and Guidelines can be found in <#586650192896589840> and <#737311986697764954>!\n\nTo verify, please type `verify` in this channel!",
             color=self.maincolor
         )
         await ctx.send(embed=embed)
