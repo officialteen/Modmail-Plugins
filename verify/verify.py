@@ -33,7 +33,7 @@ class Verify(commands.Cog):
                     role = guild.get_role(self.defaultRole)
                     await message.author.add_roles(role)
                     log_channel = guild.get_channel(self.log_channel)
-                    await message.add_reactions(":white_check_mark:")
+                    await message.add_reaction("\U00002705")
                     embed = discord.Embed(
                         title="Someone just verified!",
                         description=f"{message.author.mention} just verified!\n\nHis ID is {message.author.id}\n\nThe message ID is {message.id}\nThe channel ID is {message.channel.id}\nThe message was sent at {message.created_at}",
