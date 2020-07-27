@@ -42,6 +42,16 @@ class Verify(commands.Cog):
                     await log_channel.send(embed=embed)
                     await asyncio.sleep(2)
                     await message.delete()
+                    try:
+                        embed = discord.Embed(
+                            title="Verification",
+                            description="You are now verified in the Team Hope Discord Server!",
+                            color=self.maincolor
+                        )
+                        await message.author.send(embed=embed)
+                    except:
+                        print(f"Couldn't send {message.author.name} his verification acceptation")
+                        
                 else:
                     await message.delete()
                     return
