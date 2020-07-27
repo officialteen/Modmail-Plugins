@@ -3,13 +3,15 @@ from discord.ext import commands
 import asyncio
 from datetime import datetime
 
+
 class Verify(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.maincolor = 0x06c9ff
         self.errorcolor = 0xFF0000
-        self.log_channel = 737378978410790912 #ID of the log channel
-        self.defaultRole = 586643846780158087 #ID of the Discord Member role
+        self.log_channel = 737378978410790912  # ID of the log channel
+        self.defaultRole = 586643846780158087  # ID of the Discord Member role
+        self.unverifiedRole = 737416620951207987 # ID of unverified role
 
     @commands.command(name="send-verify")
     @commands.has_permissions(administrator=True)
@@ -31,6 +33,8 @@ class Verify(commands.Cog):
                 if message.content.lower() == "verify":
                     guild = message.guild
                     role = guild.get_role(self.defaultRole)
+                    un = guild.get_role(self.unverifiedRole)
+                    await message.author.remove_roles(un)
                     await message.author.add_roles(role)
                     log_channel = guild.get_channel(self.log_channel)
                     await message.add_reaction("\U00002705")
@@ -51,10 +55,11 @@ class Verify(commands.Cog):
                         await message.author.send(embed=embed)
                     except:
                         print(f"Couldn't send {message.author.name} his verification acceptation")
-                        
+
                 else:
                     await message.delete()
                     return
+
 
 def setup(bot):
     bot.add_cog(Verify(bot))
