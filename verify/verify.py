@@ -27,23 +27,24 @@ class Verify(commands.Cog):
             return
 
         else:
-            if message.content.lower() == "verify":
-                guild = message.guild
-                role = guild.get_role(self.defaultRole)
-                await message.author.add_roles(role)
-                log_channel = guild.get_channel(self.log_channel)
-                await message.add_reactions(":white_check_mark:")
-                embed = discord.Embed(
-                    title="Someone just verified!",
-                    description=f"{message.author.mention} just verified!\n\nHis ID is {message.author.id}\n\nThe message ID is {message.id}\nThe channel ID is {message.channel.id}\nThe message was sent at {message.created_at}",
-                    color=self.maincolor
-                )
-                log_channel.send(embed=embed)
-                await asyncio.sleep(2)
-                await message.delete()
-            else:
-                await message.delete()
-                return
+            if message.channel.id == 737356477404151856:
+                if message.content.lower() == "verify":
+                    guild = message.guild
+                    role = guild.get_role(self.defaultRole)
+                    await message.author.add_roles(role)
+                    log_channel = guild.get_channel(self.log_channel)
+                    await message.add_reactions(":white_check_mark:")
+                    embed = discord.Embed(
+                        title="Someone just verified!",
+                        description=f"{message.author.mention} just verified!\n\nHis ID is {message.author.id}\n\nThe message ID is {message.id}\nThe channel ID is {message.channel.id}\nThe message was sent at {message.created_at}",
+                        color=self.maincolor
+                    )
+                    log_channel.send(embed=embed)
+                    await asyncio.sleep(2)
+                    await message.delete()
+                else:
+                    await message.delete()
+                    return
         await self.bot.process_commands(message)
 
 def setup(bot):
