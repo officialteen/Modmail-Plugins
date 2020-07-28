@@ -7,3 +7,5 @@ https://cdn.discordapp.com/emojis/707510241276985425.gif?v=1
 This plugin will send an embed whenever someone boosts the server!
 
 To add this plugin, use this command: `[p]plugins add Teen1/Modmail-Plugins/nitroboost`  - `[p]` stands for your prefix
+
+THIS PLUGIN NO LONGER WORKS
