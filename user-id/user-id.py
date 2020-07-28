@@ -10,9 +10,11 @@ class userID(commands.Cog):
     @commands.command()
     @checks.has_permissions(PermissionLevel.SUPPORTER)
     async def userid(self, ctx):
-        member = ctx.thread.recipient
-        if member == None:
+        thread = ctx.thread
+        if thread == None:
             member = ctx.author
+        else:
+            member = thread.recipient.id
         await ctx.send(f"{member.mention}'s ID is {member.id}")
 
 def setup(bot):
