@@ -14,7 +14,7 @@ class userID(commands.Cog):
         if thread == None:
             member = ctx.author
         else:
-            member = thread.recipient.id
+            member = thread.recipient
         await ctx.send(f"{member.mention}'s ID is {member.id}")
 
 def setup(bot):
