@@ -9,7 +9,7 @@ class Test1(commands.Cog):
     async def send_s(self, ctx):
         embed = discord.Embed(
             title="***7 SIN'S SOCIALS***\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬",
-            description=":instagram: **Instagram:**\n• <https://www.instagram.com/7sins.ggs>\n\n:youtube: **YouTube:**\n• <https://www.youtube.com/channel/UCrA0fNlbVXKoA1eSu8YsYhA/featured>\n\n:twitter: **Twitter:**\n• <https://twitter.com/7soffical>\n\n:discord: **Discord:**\n• <https://discord.gg/MwVC2AR>",
+            description="<:instagram:724501733317017682> **Instagram:**\n• <https://www.instagram.com/7sins.ggs>\n\n<:youtube:663247076167122945> **YouTube:**\n• <https://www.youtube.com/channel/UCrA0fNlbVXKoA1eSu8YsYhA/featured>\n\n<:twitter:724501698248441877> **Twitter:**\n• <https://twitter.com/7soffical>\n\n<:discord:724501713242816553> **Discord:**\n• <https://discord.gg/MwVC2AR>",
             color=0xee3463,
             timestamp=ctx.message.created_at
         )
