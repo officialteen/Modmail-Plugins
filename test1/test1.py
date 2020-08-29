@@ -5,7 +5,7 @@ class Test(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
     
-    @commands.Cog.listiner()
+    @commands.Cog.listener()
     async def on_plugin_ready():
         await self.bot.change_presence(activity=discord.Game(name="DM For Help | StormServicing"))
     
