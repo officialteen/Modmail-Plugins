@@ -2,21 +2,21 @@ import discord
 from discord.ext import commands, tasks
 import asyncio
 
-@tasks.loop(seconds=10)
-async def start_the_status(bot, first, second, third):
-    await bot.change_presence(activity=discord.Game(name=first))
-    await asyncio.sleep(10)
-    await bot.change_presence(activity=discord.Game(name=second))
-    await asyncio.sleep(10)
-    await bot.change_presence(activity=discord.Game(name=third))
-    await asyncio.sleep(10)
-
 class ChangeStatus(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.first = None
         self.second = None
         self.third = None
+
+    @tasks.loop(seconds=10)
+    async def start_the_status(self):
+        await self.bot.change_presence(activity=discord.Game(name=self.first))
+        await asyncio.sleep(10)
+        await self.bot.change_presence(activity=discord.Game(name=self.second))
+        await asyncio.sleep(10)
+        await self.bot.change_presence(activity=discord.Game(name=self.third))
+        await asyncio.sleep(10)
 
     @commands.group(name="statusy", invoke_without_command=True)
     async def status_group(self, ctx):
@@ -32,7 +32,7 @@ class ChangeStatus(commands.Cog):
         if self.first == None or self.second == None or self.third == None:
             await ctx.send("Please set the 3 Status's first!")
         else:
-            start_the_status.start(self.first, self.second, self.third)
+            self.start_the_status.start()
             await ctx.send("Done! If you experience any problems just run this command again!")
 
     @status_group.command(name="one")
