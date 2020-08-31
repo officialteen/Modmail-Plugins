@@ -4,11 +4,11 @@ import asyncio
 
 @tasks.loop(seconds=10)
 async def start_the_status(self, one, two, three):
-    await self.bot.change_presence(activity=discord.Game(name=one))
+    await self.bot.change_presence(activity=discord.Game(name=self.first))
     await asyncio.sleep(10)
-    await self.bot.change_presence(activity=discord.Game(name=two))
+    await self.bot.change_presence(activity=discord.Game(name=self.second))
     await asyncio.sleep(10)
-    await self.bot.change_presence(activity=discord.Game(name=three))
+    await self.bot.change_presence(activity=discord.Game(name=self.third))
     await asyncio.sleep(10)
 
 class ChangeStatus(commands.Cog):
@@ -18,7 +18,7 @@ class ChangeStatus(commands.Cog):
         self.second = None
         self.third = None
 
-    @commands.group(name="statusy")
+    @commands.group(name="statusy", invoke_without_command=True)
     async def status_group(self, ctx):
         embed = discord.Embed(
             title="Change the Bot's Status!",
