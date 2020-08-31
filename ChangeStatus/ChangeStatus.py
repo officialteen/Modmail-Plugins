@@ -11,11 +11,11 @@ class ChangeStatus(commands.Cog):
 
     @tasks.loop(seconds=10)
     async def start_the_status(self):
-        await self.bot.change_presence(activity=discord.Game(name=self.first))
+        await self.bot.change_presence(activity=discord.Game(name=f"{self.first}"))
         await asyncio.sleep(10)
-        await self.bot.change_presence(activity=discord.Game(name=self.second))
+        await self.bot.change_presence(activity=discord.Game(name=f"{self.second}"))
         await asyncio.sleep(10)
-        await self.bot.change_presence(activity=discord.Game(name=self.third))
+        await self.bot.change_presence(activity=discord.Game(name=f"{self.third}"))
         await asyncio.sleep(10)
 
     @commands.group(name="statusy", invoke_without_command=True)
