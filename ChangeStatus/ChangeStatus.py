@@ -3,12 +3,12 @@ from discord.ext import commands, tasks
 import asyncio
 
 @tasks.loop(seconds=10)
-async def start_the_status(bot):
-    await bot.change_presence(activity=discord.Game(name=self.first))
+async def start_the_status(bot, first, second, third):
+    await bot.change_presence(activity=discord.Game(name=first))
     await asyncio.sleep(10)
-    await bot.change_presence(activity=discord.Game(name=self.second))
+    await bot.change_presence(activity=discord.Game(name=second))
     await asyncio.sleep(10)
-    await bot.change_presence(activity=discord.Game(name=self.third))
+    await bot.change_presence(activity=discord.Game(name=third))
     await asyncio.sleep(10)
 
 class ChangeStatus(commands.Cog):
@@ -32,7 +32,7 @@ class ChangeStatus(commands.Cog):
         if self.first == None or self.second == None or self.third == None:
             await ctx.send("Please set the 3 Status's first!")
         else:
-            start_the_status.start()
+            start_the_status.start(self.first, self.second, self.third)
             await ctx.send("Done! If you experience any problems just run this command again!")
 
     @status_group.command(name="one")
