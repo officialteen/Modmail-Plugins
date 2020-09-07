@@ -57,26 +57,29 @@ class allInOne(commands.Cog):
 
     @commands.command(name="verify")
     async def verify_cmd(self, ctx):
-        await ctx.message.add_reactions("✅")
-        await asyncio.sleep(3)
-        await ctx.message.delete()
-        # Verify roles
-        role1 = ctx.guild.get_role(718174958936653884)
-        role2 = ctx.guild.get_role(726859506339938365)
-        role3 = ctx.guild.get_role(725807695990358057)
-        role4 = ctx.guild.get_role(726853712320004227)
-        role5 = ctx.guild.get_role(726862277965512816)
-        # Add the role
-        await ctx.author.add_roles(role1, role2, role3, role4, role5)
-        # Send the log msg
-        log_channel = ctx.guild.get_channel(718214230658252851)
-        embed = discord.Embed(
-            title="Someone just verified!",
-            description=f"**{ctx.author}** just verified!\n\nHis ID is: {ctx.author.id}\nHis name is: {ctx.author.name}\nHis discriminator is: {ctx.author.discriminator}\n\nThe message ID is: {ctx.message.id}\nThe channel ID is: {ctx.message.channel.id}\n\nMessage was sent at {datetime.utcnow()} UTC",
-            color=self.color,
-            timestamp=ctx.message.created_at
-        )
-        await log_channel.send(embed=embed)
+        if not ctx.channel.id == 720012169567010836:
+            return
+        else:
+            await ctx.message.add_reaction("✅")
+            await asyncio.sleep(3)
+            await ctx.message.delete()
+            # Verify roles
+            role1 = ctx.guild.get_role(718174958936653884)
+            role2 = ctx.guild.get_role(726859506339938365)
+            role3 = ctx.guild.get_role(725807695990358057)
+            role4 = ctx.guild.get_role(726853712320004227)
+            role5 = ctx.guild.get_role(726862277965512816)
+            # Add the role
+            await ctx.author.add_roles(role1, role2, role3, role4, role5)
+            # Send the log msg
+            log_channel = ctx.guild.get_channel(718214230658252851)
+            embed = discord.Embed(
+                title="Someone just verified!",
+                description=f"**{ctx.author}** just verified!\n\nHis ID is: {ctx.author.id}\nHis name is: {ctx.author.name}\nHis discriminator is: {ctx.author.discriminator}\n\nThe message ID is: {ctx.message.id}\nThe channel ID is: {ctx.message.channel.id}\n\nMessage was sent at {datetime.utcnow()} UTC",
+                color=self.color,
+                timestamp=ctx.message.created_at
+            )
+            await log_channel.send(embed=embed)
 
     @commands.Cog.listener()
     async def on_message(self, message):
