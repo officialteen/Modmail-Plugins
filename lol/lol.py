@@ -24,19 +24,19 @@ class allInOne(commands.Cog):
         if not ruleNum:
             await ctx.send("Hey there! This is the rules command, please include the Rule Number and ill let you know what it is!")
         else:
-            if ruleNum == 1:
+            if int(ruleNum) == 1:
                 await ctx.send("Discord Terms of Service can be found here: https://discord.com/new/terms. Discord needs you to be 13 or above to join this server.")
-            elif ruleNum == 2:
+            elif int(ruleNum) == 2:
                 await ctx.send("YT Terms of Service can be found here: https://www.youtube.com/static?template=terms, Twitch Terms of Service can be found here: https://www.twitch.tv/p/legal/terms-of-service/")
-            elif ruleNum == 3:
+            elif int(ruleNum) == 3:
                 await ctx.send("No swearing, gory language, 18+ images or text should be posted here. This is a family friendly server and if you do that you will be punished. Don't have your status, name or profile picture say anything inappropriate. Please have ping-able names, this means at least having a few normal characters where staff can ping you if necessary.")
-            elif ruleNum == 4:
+            elif int(ruleNum) == 4:
                 await ctx.send("Only advertise in the correct areas, look above in the FAQ for a list of all the advertising channels possible. Only promote in the correct areas. Please do not direct message members with any sort of promotion as that will be a ban.")
-            elif ruleNum == 5:
+            elif int(ruleNum) == 5:
                 await ctx.send("All punishment is up to staff and if you think you were falsely punished or want to report a staff <@735200954026033286>. Staff can punish you at any time for any reason and have the final say.")
-            elif ruleNum == 6:
+            elif int(ruleNum) == 6:
                 await ctx.send("Do not talk about self harm or suicide here. While it is important this is not the right place, if you or a friend is contemplating suicide call this number: 1-800-273-8255. Please do not post downloadable files or anything that is spyware, malware or any type of ip grabber or hack. The bots advertised in <@720712592812671057> are use at your own risk.")
-            elif ruleNum > 6 or ruleNum <= 0:
+            elif int(ruleNum) > 6 or int(ruleNum) <= 0:
                 await ctx.send("This rule has not been found!")
 
     @commands.command(name="welcome", aliases=['wel'])
@@ -45,7 +45,7 @@ class allInOne(commands.Cog):
 
     @commands.command(name="topic")
     async def topic_cmd(self, ctx):
-        await ctx.send("Welcome to the server, we hope you have a great time here!")
+        await ctx.send("Please change the topic/discussion.")
 
     @commands.command(name="patreon")
     async def patreon_cmd(self, ctx):
