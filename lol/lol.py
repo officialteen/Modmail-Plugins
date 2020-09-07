@@ -84,6 +84,8 @@ class allInOne(commands.Cog):
     @commands.Cog.listener()
     async def on_message(self, message):
         if message.channel.id == 720012169567010836:
+            if message.content.lower() == ".verify":
+                return
             if message.author.id != 735200954026033286: # The Bot ID
                 await message.delete()
             else:
