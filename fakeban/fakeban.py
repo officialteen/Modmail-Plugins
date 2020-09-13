@@ -6,7 +6,7 @@ class fakeBan(commands.Cog):
         self.bot = bot
         self.color = self.bot.main_color
         
-    @commands.command(name="pban")
+    @commands.command(name="pban", aliases=['fban'])
     async def fban(self, ctx, member: discord.Member = None, reason = None):
         await ctx.message.delete()
         if not member:
