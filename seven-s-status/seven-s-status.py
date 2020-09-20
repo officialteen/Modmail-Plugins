@@ -12,7 +12,7 @@ class StatusFor7S(commands.Cog):
         await self.bot.change_presence(activity=discord.Game(name=f"Watching {server.member_count} Members!"))
         await asyncio.sleep(10)
 
-    @commands.group(name="status")
+    @commands.group(name="statos")
     async def status_group(self, ctx):
         pass
 
