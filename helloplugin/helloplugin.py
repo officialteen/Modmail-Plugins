@@ -5,6 +5,7 @@ class HelloPlugin(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message(self, message):
+        print("MSG")
 
         if message.author.bot:
             return
