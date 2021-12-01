@@ -12,6 +12,8 @@ class HelloPlugin(commands.Cog):
         if message.channel.id == "887731496876646444":
             if message.content.lower().startswith("!") or message.content.lower().startswith("?") or message.content.lower().startswith("-") or message.content.lower().startswith("=")or message.content.lower().startswith("*"):
                 await message.channel.send("Please only use bot commands in <#888427048882823168>")
+        else:
+            print("none")
 
 def setup(bot):
     bot.add_cog(HelloPlugin(bot))
