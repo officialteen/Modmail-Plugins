@@ -9,24 +9,9 @@ class HelloPlugin(commands.Cog):
         if message.author.bot:
             return
 
-        if "hello" in message.content.lower():
-            await message.channel.send("Hey")
-        elif "yo" in message.content.lower():
-            await message.channel.send("yo")
-        elif "gm" in message.content.lower():
-            await message.channel.send("Good Morning")
-        elif "gn" in message.content.lower():
-            await message.channel.send("Good Night")
-        elif "good morning" in message.content.lower():
-            await message.channel.send("Good Morning !")
-        elif "good night" in message.content.lower():
-            await message.channel.send("Good Night !")
-        elif "hey" in message.content.lower():
-            await message.channel.send("Hello !")
-        elif "sup" in message.content.lower():
-            await message.channel.send("Sup")
-        elif "hi" in message.content.lower():
-            await message.channel.send("Hello!")
+        if message.channel.id == "887731496876646444":
+            if message.content.lower().startswith("!") or message.content.lower().startswith("?") or message.content.lower().startswith("-") or message.content.lower().startswith("=")or message.content.lower().startswith("*"):
+                await message.channel.send("Please only use bot commands in <#888427048882823168>")
 
 def setup(bot):
     bot.add_cog(HelloPlugin(bot))
