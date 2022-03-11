@@ -292,5 +292,30 @@ class cmd(commands.Cog):
         rnd = random.randint(0, len(urls) - 1)
         await ctx.send(urls[rnd])
 
+    @commands.command(name="outrageous")
+    async def outrageous(self, ctx):
+        urls = [
+            "https://tenor.com/view/kevin-o-leary-shark-tank-outrageous-absurd-ridiculous-gif-6895750",
+            "https://tenor.com/view/mae-do-marco-m%C3%A3e-do-marco-gif-20779134"
+        ]
+        rnd = random.randint(0, len(urls) - 1)
+        await ctx.send(urls[rnd])
+
+    @commands.command(name="whale")
+    async def whale(self, ctx):
+        urls = [
+            "https://tenor.com/view/mae-do-marco-m%C3%A3e-do-marco-gif-20779134",
+            "https://tenor.com/view/whale-hellothere-hello-hi-hey-gif-4505186",
+            "https://tenor.com/view/1inch-1inch-exchange-1inch-dex-defi-crypto-gif-24852783",
+            "https://tenor.com/view/oh-whale-swim-whale-cartoon-oh-well-gif-15436720",
+            "https://tenor.com/view/whale-activity-whale-activity-fatih-kev-gif-24585224",
+            "https://tenor.com/view/drink-water-drinking-fish-thirsty-whaleshark-gif-17289007",
+            "https://tenor.com/view/unusual-whales-unusual-whales-rain-money-gif-23090764",
+            "https://tenor.com/view/underwater-whale-gif-24576671",
+            "https://tenor.com/view/whale-swallow-eat-nom-hungry-gif-17097355"
+        ]
+        rnd = random.randint(0, len(urls) - 1)
+        await ctx.send(urls[rnd])
+
 def setup(bot):
     bot.add_cog(cmd(bot))
