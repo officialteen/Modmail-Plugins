@@ -16,7 +16,6 @@ class cmd(commands.Cog):
             "https://tenor.com/view/aruuu-lets-goo-lets-go-hype-reaction-gif-24148009",
             "https://tenor.com/view/1inch-1inch-exchange-1inch-dex-defi-crypto-gif-24853025",
             "https://tenor.com/view/lfg-batman-gif-24589308",
-            "https://tenor.com/view/roger-rogerdorn-majorleague-lfg-dorn-gif-18311747",
             "https://tenor.com/view/wheelie-rollin-they-see-me-rollin-jeep-kid-gif-19615923",
             "https://tenor.com/view/lfg-lebron-james-lebron-james-meme-gif-23044761",
             "https://tenor.com/view/orange-kid-letsgooo-orange-kid-danceing-orange-kid-letsgooo-gif-22720050"
@@ -313,6 +312,19 @@ class cmd(commands.Cog):
             "https://tenor.com/view/unusual-whales-unusual-whales-rain-money-gif-23090764",
             "https://tenor.com/view/underwater-whale-gif-24576671",
             "https://tenor.com/view/whale-swallow-eat-nom-hungry-gif-17097355"
+        ]
+        rnd = random.randint(0, len(urls) - 1)
+        await ctx.send(urls[rnd])
+
+    @commands.command(name="whale")
+    async def ryan(self, ctx):
+        urls = [
+            "https://tenor.com/view/ryan-the-office-howard-gif-9141990",
+            "https://tenor.com/view/ryan-sign-ryan-sign-gif-20225832",
+            "https://tenor.com/view/ryandance-ryan-giraffe-giraffedance-ryangiraffe-gif-23412810",
+            "https://tenor.com/view/ryan-cool-epic-entrance-here-gif-24466592",
+            "https://tenor.com/view/milk-milk-and-mocha-ryan-chiaki-gif-20172256",
+            "https://tenor.com/view/ryan-run-weird-gif-20236226"
         ]
         rnd = random.randint(0, len(urls) - 1)
         await ctx.send(urls[rnd])
