@@ -316,7 +316,7 @@ class cmd(commands.Cog):
         rnd = random.randint(0, len(urls) - 1)
         await ctx.send(urls[rnd])
 
-    @commands.command(name="whale")
+    @commands.command(name="ryan")
     async def ryan(self, ctx):
         urls = [
             "https://tenor.com/view/ryan-the-office-howard-gif-9141990",
