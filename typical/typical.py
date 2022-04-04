@@ -322,9 +322,135 @@ class cmd(commands.Cog):
             "https://tenor.com/view/ryan-the-office-howard-gif-9141990",
             "https://tenor.com/view/ryan-sign-ryan-sign-gif-20225832",
             "https://tenor.com/view/ryandance-ryan-giraffe-giraffedance-ryangiraffe-gif-23412810",
-            "https://tenor.com/view/ryan-cool-epic-entrance-here-gif-24466592",
             "https://tenor.com/view/milk-milk-and-mocha-ryan-chiaki-gif-20172256",
             "https://tenor.com/view/ryan-run-weird-gif-20236226"
+        ]
+        rnd = random.randint(0, len(urls) - 1)
+        await ctx.send(urls[rnd])
+
+    @commands.command(name="tt")
+    async def tt(self, ctx):
+        urls = [
+            "https://cdn.discordapp.com/attachments/951136494498754582/958378478091264101/tiger_tuesday.png"
+        ]
+        rnd = random.randint(0, len(urls) - 1)
+        await ctx.send(urls[rnd])
+
+    @commands.command(name="duck")
+    async def duck(self, ctx):
+        urls = [
+            "https://tenor.com/view/duck-yeah-gif-20435370",
+            "https://tenor.com/view/lils-silly-duck-lilsduck-ducky-duck-duck-riri-the-duck-gif-19719423",
+            "https://tenor.com/view/bird-dance-duck-happy-smile-gif-15512646",
+            "https://tenor.com/view/duck-duckling-adorable-gif-20252450",
+            "https://tenor.com/view/dancing-cute-duck-duck-cartoon-gif-21446316",
+            "https://tenor.com/view/duck-fall-back-cute-falling-jump-gif-15884158",
+            "https://tenor.com/view/followme-duck-duck-go-run-gif-13231144"
+        ]
+        rnd = random.randint(0, len(urls) - 1)
+        await ctx.send(urls[rnd])
+
+    @commands.command(name="marcus")
+    async def marcus(self, ctx):
+        urls = [
+            "https://tenor.com/view/eartha-kitt-marcus-boomerang-eddie-murphy-gif-9746949g",
+            "https://tenor.com/view/marcus-elmo-abcdac-gif-19454874",
+            "https://tenor.com/view/little-superstar-marcus-after4ultras-celebration-happy-happy-dancing-gif-15854807",
+            "https://tenor.com/view/marcus-side-eye-eyeroll-gif-14312179",
+            "https://tenor.com/view/spray-marcus-no-nope-gif-15516439"
+        ]
+        rnd = random.randint(0, len(urls) - 1)
+        await ctx.send(urls[rnd])
+
+    @commands.command(name="cards")
+    async def cards(self, ctx):
+        urls = [
+            "https://tenor.com/view/poker-face-poker-partypoker-gif-14470006",
+            "https://tenor.com/view/mickey-mouse-card-gif-8709513",
+            "https://tenor.com/view/ma-vie-cards-shifty-oops-fail-gif-17242923",
+            "https://tenor.com/view/card-joker-playing-cards-playing-cards-ladder-cards-joker-wild-card-gif-13866104",
+            "https://tenor.com/view/onwaaard-zombie-orpheus-the-gamers-hands-of-fate-tghof-gif-17172280",
+            "https://tenor.com/view/bloody-battle-roblox-buzz-buzz-lightyear-magic-cards-gif-22129326"
+        ]
+        rnd = random.randint(0, len(urls) - 1)
+        await ctx.send(urls[rnd])
+
+    @commands.command(name="cubs")
+    async def cubs(self, ctx):
+        urls = [
+            "https://tenor.com/view/cubs-cub-play-tiger-cub-tiger-gif-14369241",
+            "https://tenor.com/view/carrying-cub-tiger-cub-escape-tiger-cub-lets-go-home-gif-22411407",
+            "https://tenor.com/view/tiger-tiger-cub-kitty-roaring-kitty-meow-gif-20510735",
+            "https://tenor.com/view/tiger-licking-lips-yummy-tasty-tiger-cubs-gif-16527606",
+            "https://tenor.com/view/tiger-cub-baby-tiger-rawr-wake-up-tiger-gif-13295121",
+            "https://tenor.com/view/tiger-cub-baby-tiger-sneak-tiger-tigers-gif-13295144",
+            "https://tenor.com/view/tiger-cub-tiger-cub-escape-tiger-climbing-baby-tiger-gif-22411404",
+            "https://tenor.com/view/animals-tiger-cub-play-cute-gif-3309557",
+            "https://tenor.com/view/lion-king-simba-roar-cute-lion-cub-gif-17303165"
+        ]
+        rnd = random.randint(0, len(urls) - 1)
+        await ctx.send(urls[rnd])
+
+    @commands.command(name="moon")
+    async def moon(self, ctx):
+        urls = [
+            "https://tenor.com/view/doge-doge-coin-to-the-moon-crypto-cryptocurrency-gif-14563637",
+            "https://tenor.com/view/golden-tiger-goldentiger-coin-goldentiger-crypto-crypto-to-the-moon-golden-tiger-to-the-moon-gif-24440846",
+            "https://tenor.com/view/christiangravias-collings-collingsrealestate-collingsnft-crypto-gif-24893289",
+            "https://tenor.com/view/dinoswap-dino-matic-poly-quick-gif-23091993",
+            "https://tenor.com/view/to-the-moon-elon-musk-gif-21490621",
+            "https://tenor.com/view/safemoon-safemoonarmy-gif-22764284",
+            "https://tenor.com/view/fly-me-to-the-moon-take-me-to-the-moon-send-me-to-the-moon-lets-go-to-the-moon-launch-me-to-the-moon-gif-17524452"
+        ]
+        rnd = random.randint(0, len(urls) - 1)
+        await ctx.send(urls[rnd])
+
+    @commands.command(name="baby")
+    async def baby(self, ctx):
+        urls = [
+            "https://tenor.com/view/baby-pose-wink-cute-adorable-gif-14212692",
+            "https://tenor.com/view/the-holy-baby-baby-holy-the-holy-cat-the-holy-baby-cult-gif-24153109",
+            "https://tenor.com/view/americas-got-talent-agt-happy-smile-excited-gif-14880927",
+            "https://tenor.com/view/kiss-day-gif-23596984",
+            "https://tenor.com/view/tiger-baby-cute-cub-roar-gif-17763828"
+        ]
+        rnd = random.randint(0, len(urls) - 1)
+        await ctx.send(urls[rnd])
+
+    @commands.command(name="bands")
+    async def bands(self, ctx):
+        urls = [
+            "https://tenor.com/view/i-want-hella-bands-lil-skies-whoispdp-tokyo-song-i-want-money-gif-23006558",
+            "https://tenor.com/view/money-hustling-make-it-rain-gif-7263922",
+            "https://tenor.com/view/payday-nicki-minaj-swag-hundreds-dollar-bills-gif-5403748",
+            "https://tenor.com/view/two-bands-on-my-feet-on-my-feet-two-bands-bands-money-gif-13095071",
+            "https://tenor.com/view/hundred-bands-everytime-hundred-bands-stacks-rich-flex-gif-13769945"
+        ]
+        rnd = random.randint(0, len(urls) - 1)
+        await ctx.send(urls[rnd])
+
+    @commands.command(name="punk")
+    async def punk(self, ctx):
+        urls = [
+            "https://cdn.discordapp.com/attachments/931612704479793173/959470092255625247/giphy_1.gif",
+            "https://cdn.discordapp.com/attachments/931612704479793173/959470092045914122/cat-nodding.gif",
+            "https://cdn.discordapp.com/attachments/931612704479793173/959470091802665070/giphy.gif",
+            "https://cdn.discordapp.com/attachments/931612704479793173/959470091320315954/giphy_2.gif",
+            "https://cdn.discordapp.com/attachments/931612704479793173/959470090749870210/ric-flair.gif",
+            "https://cdn.discordapp.com/attachments/931612704479793173/959470090443689994/halloween-skull.gif",
+            "https://cdn.discordapp.com/attachments/931612704479793173/959470090238189619/beavis-and-butthead-yes.gif",
+            "https://cdn.discordapp.com/attachments/931612704479793173/959470090003312640/punk-punk-is-not-dead.gif"
+        ]
+        rnd = random.randint(0, len(urls) - 1)
+        await ctx.send(urls[rnd])
+
+    @commands.command(name="bige")
+    async def bige(self, ctx):
+        urls = [
+            "https://tenor.com/view/big-e-wwe-wrestling-25words-or-less-gif-15515016",
+            "https://tenor.com/view/weartesters-sniff-sneakerhead-sniffingchris-chrissniff-gif-24057591",
+            "https://tenor.com/view/future-gif-9525959",
+            "https://tenor.com/view/patrick-star-evil-laugh-fire-flames-burning-gif-24546963"
         ]
         rnd = random.randint(0, len(urls) - 1)
         await ctx.send(urls[rnd])
