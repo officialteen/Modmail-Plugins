@@ -455,5 +455,20 @@ class cmd(commands.Cog):
         rnd = random.randint(0, len(urls) - 1)
         await ctx.send(urls[rnd])
 
+    @commands.command(name="sc", aliases=['scott'])
+    async def sc(self, ctx):
+        urls = [
+            "https://c.tenor.com/0R2CGQunyHUAAAAM/the-santa-clause-santa-clause.gif",
+            "https://tenor.com/view/santaclause-fat-gif-19409679",
+            "https://c.tenor.com/C_VepJ2uqG4AAAAM/santa-claus-belly.gif",
+            "https://c.tenor.com/tQHgsditfgAAAAAM/santa-santaclaus.gif",
+            "https://tenor.com/view/the-santa-clause-gif-7327123",
+            "https://tenor.com/view/docbrown-backtothefuture-greatscott-gif-5445978",
+            "https://tenor.com/view/scott-i-like-that-joker-gif-15408598",
+            "https://tenor.com/view/groundhog-screaming-yelling-scott-gopher-gif-18829122"
+        ]
+        rnd = random.randint(0, len(urls) - 1)
+        await ctx.send(urls[rnd])        
+        
 def setup(bot):
     bot.add_cog(cmd(bot))
