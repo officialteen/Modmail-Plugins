@@ -470,5 +470,16 @@ class cmd(commands.Cog):
         rnd = random.randint(0, len(urls) - 1)
         await ctx.send(urls[rnd])        
         
+    @commands.command(name="jess")
+    async def jess(self, ctx):
+        urls = [
+            "https://tenor.com/view/jessica-fallout-jess-gif-19856774",
+            "https://tenor.com/view/free-elf-jess-dobby-gif-18451682",
+            "https://tenor.com/view/chessies-chesapeake-shores-jess-sc-heart-home-dirty-dancing-gif-22363558",
+            "https://tenor.com/view/its-jess-new-girl-jess-wink-gif-6080121"
+        ]
+        rnd = random.randint(0, len(urls) - 1)
+        await ctx.send(urls[rnd])
+        
 def setup(bot):
     bot.add_cog(cmd(bot))
