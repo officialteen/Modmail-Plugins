@@ -480,6 +480,19 @@ class cmd(commands.Cog):
         ]
         rnd = random.randint(0, len(urls) - 1)
         await ctx.send(urls[rnd])
+
+    @commands.command(name="chef")
+    async def chef(self, ctx):
+        urls = [
+            "https://tenor.com/view/chefs-kiss-french-chef-perfect-dish-excellent-food-perfection-gif-20341505",
+            "https://tenor.com/view/master-chef-gordon-ramsey-gif-12002082",
+            "https://tenor.com/view/swedish-chef-cooking-muppets-singing-dancing-gif-16637219",
+            "https://tenor.com/view/salad-hostile-bitter-mess-messy-gif-9191505",
+            "https://tenor.com/view/salt-sprinkle-chef-tada-voila-gif-7639090",
+            "https://tenor.com/view/perfecto-perfect-success-aroma-yummy-gif-17840702"
+        ]
+        rnd = random.randint(0, len(urls) - 1)
+        await ctx.send(urls[rnd])
         
 def setup(bot):
     bot.add_cog(cmd(bot))
