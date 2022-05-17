@@ -494,5 +494,18 @@ class cmd(commands.Cog):
         rnd = random.randint(0, len(urls) - 1)
         await ctx.send(urls[rnd])
         
+    @commands.command(name="viral")
+    async def viral(self, ctx):
+        urls = [
+            "https://tenor.com/view/im-viral-will-davis-miles-teller-get-a-job-viral-video-gif-18257614",
+            "https://tenor.com/view/its-gone-viral-chicago-pd-viral-it-has-spread-going-viral-gif-20873898",
+            "https://tenor.com/view/so-viral-shea-whitney-so-famous-trending-popular-gif-23644999",
+            "https://tenor.com/view/young-invent-h-gang-black-spanish-rock-star-rose-hip-hop-gif-22745724",
+            "https://tenor.com/view/sunglasses-cant-deal-with-it-gif-5853358",
+            "https://tenor.com/view/tigerplayz-tigersir-tigerking-tiger-rgb-gif-22803638"
+        ]
+        rnd = random.randint(0, len(urls) - 1)
+        await ctx.send(urls[rnd])
+        
 def setup(bot):
     bot.add_cog(cmd(bot))
