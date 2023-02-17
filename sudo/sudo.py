@@ -8,7 +8,7 @@ class SudoBot(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def sudo(ctx, member: discord.Member, *, shit=None):
+    async def sudo(self, ctx, member: discord.Member, *, shit=None):
         await ctx.message.delete()
         webhooks = await ctx.channel.webhooks()
         for webhook in webhooks:
