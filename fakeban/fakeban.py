@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 
-class fakeBan(commands.Cog):
+class Fakeban(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.color = self.bot.main_color
@@ -24,4 +24,4 @@ class fakeBan(commands.Cog):
                 await ctx.send(embed=embed)           
         
 def setup(bot):
-    bot.add_cog(fakeBan(bot))
+    bot.add_cog(Fakeban(bot))
