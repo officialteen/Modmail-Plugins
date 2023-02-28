@@ -7,9 +7,9 @@ class Fakeban(commands.Cog):
         self.color = self.bot.main_color
         
     @commands.command()
-    async def fban(self, ctx, member: discord.Member = None, reason = None):
-        embed = discord.Embed(title="Ban", description=f"{member.mention} Has been banned for {reason}!", color=self.color)
-        await ctx.send(embed=embed)           
+    async def fban(self, ctx, member: discord.Member, reason):
+        dad = discord.Embed(title="Ban", description=f"{member.mention} Has been banned for {reason}!", color=self.color)
+        await ctx.send(embed=dad)           
         
 def setup(bot):
     bot.add_cog(Fakeban(bot))
