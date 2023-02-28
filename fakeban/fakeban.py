@@ -8,7 +8,10 @@ class fakeBan(commands.Cog):
         
     @commands.command(name="pban", aliases=['fban'])
     async def fban(self, ctx, member: discord.Member = None, reason = None):
-        await ctx.message.delete()
+        try:
+            await ctx.message.delete()
+        except:
+            pass
         if not member:
             embed = discord.Embed(title="Error", description="Please provide a user to ban!", color=self.bot.error_color)
             await ctx.send(embed=embed)
